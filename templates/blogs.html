@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="nav-left">
+    <h1><a href="{% url 'post_new' %}">New Blog post</a></h1>
+  </div>
+  {% for post in postblog_list %}
+    <div class="post-entry">
+      <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+      <p>{{ post.body }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

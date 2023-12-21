@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pages.apps.PagesConfig",  # New
     "posts.apps.PostsConfig",  # New
+    "blogs.apps.BlogsConfig",  # New
+    "accounts.apps.AccountsConfig",  # New
 ]
 
 MIDDLEWARE = [
@@ -114,10 +116,13 @@ USE_I18N = True
 USE_TZ = True
 
 
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
